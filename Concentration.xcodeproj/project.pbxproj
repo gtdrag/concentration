@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D61DA893200586E9001FCF64 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61DA892200586E9001FCF64 /* Concentration.swift */; };
+		D61DA895200587A6001FCF64 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61DA894200587A6001FCF64 /* Card.swift */; };
+		D61DA897200686E6001FCF64 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61DA896200686E6001FCF64 /* Shuffle.swift */; };
+		D61DA899200697B1001FCF64 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61DA898200697B1001FCF64 /* Theme.swift */; };
 		D634BDE5200003E90035DB80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D634BDE4200003E90035DB80 /* AppDelegate.swift */; };
 		D634BDE7200003E90035DB80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D634BDE6200003E90035DB80 /* ViewController.swift */; };
 		D634BDEA200003E90035DB80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D634BDE8200003E90035DB80 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D61DA892200586E9001FCF64 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		D61DA894200587A6001FCF64 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		D61DA896200686E6001FCF64 /* Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
+		D61DA898200697B1001FCF64 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D634BDE1200003E90035DB80 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D634BDE4200003E90035DB80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D634BDE6200003E90035DB80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,14 +62,26 @@
 		D634BDE3200003E90035DB80 /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
-				D634BDE4200003E90035DB80 /* AppDelegate.swift */,
+				D61DA892200586E9001FCF64 /* Concentration.swift */,
+				D61DA894200587A6001FCF64 /* Card.swift */,
 				D634BDE6200003E90035DB80 /* ViewController.swift */,
 				D634BDE8200003E90035DB80 /* Main.storyboard */,
-				D634BDEB200003E90035DB80 /* Assets.xcassets */,
-				D634BDED200003E90035DB80 /* LaunchScreen.storyboard */,
+				D61DA898200697B1001FCF64 /* Theme.swift */,
+				D61DA896200686E6001FCF64 /* Shuffle.swift */,
+				D634BDF62000058F0035DB80 /* Supporting Files */,
 				D634BDF0200003E90035DB80 /* Info.plist */,
 			);
 			path = Concentration;
+			sourceTree = "<group>";
+		};
+		D634BDF62000058F0035DB80 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D634BDE4200003E90035DB80 /* AppDelegate.swift */,
+				D634BDEB200003E90035DB80 /* Assets.xcassets */,
+				D634BDED200003E90035DB80 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D61DA897200686E6001FCF64 /* Shuffle.swift in Sources */,
 				D634BDE7200003E90035DB80 /* ViewController.swift in Sources */,
 				D634BDE5200003E90035DB80 /* AppDelegate.swift in Sources */,
+				D61DA899200697B1001FCF64 /* Theme.swift in Sources */,
+				D61DA893200586E9001FCF64 /* Concentration.swift in Sources */,
+				D61DA895200587A6001FCF64 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
