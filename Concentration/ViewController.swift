@@ -26,6 +26,7 @@ class ViewController: UIViewController
         }
     }
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var flipCountLabel: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
     
@@ -42,6 +43,7 @@ class ViewController: UIViewController
     }
     
     override func viewDidLoad() {
+        themes.append(Theme(color: .red, emojiSet: ["a","b","c","d","e","f"], name: "letters"))
         startGame()
     }
     
@@ -54,7 +56,7 @@ class ViewController: UIViewController
                 button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             } else {
                 button.setTitle("", for: .normal)
-                button.backgroundColor = card.isMatched ?  #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0) : currentTheme!.color
+                button.backgroundColor = card.isMatched ?  #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0) : currentTheme?.color
             }
         }
     }
@@ -62,18 +64,24 @@ class ViewController: UIViewController
     
     func emoji(for card: Card) -> String {
         if emoji[card.identifier] == nil, self.emojiChoices!.count > 0 {
-                let randomIndex = Int(arc4random_uniform(UInt32(self.emojiChoices!.count)))
-                emoji[card.identifier] = self.emojiChoices!.remove(at: randomIndex)
-            }
+            let randomIndex = Int(arc4random_uniform(UInt32(self.emojiChoices!.count)))
+            emoji[card.identifier] = self.emojiChoices!.remove(at: randomIndex)
+        }
         return emoji[card.identifier] ?? "?"
     }
     
     func startGame(){
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1)/2 )
-        themes.append(Theme(color: .red, emojiSet: ["a","b","c","d","e","f"], name: "letters"))
         currentTheme = themes[currentThemeIndex]
         emojiChoices = currentTheme?.emojiSet
         flipCount = 0
+        flipCountLabel.textColor = currentTheme?.color
+        for button in cardButtons {
+            button.backgroundColor = currentTheme?.color
+        }
+        if let name = currentTheme?.name {
+            titleLabel.text = "Concentration: \(name)"
+        }
         updateView()
     }
 }
