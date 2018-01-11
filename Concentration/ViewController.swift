@@ -14,11 +14,7 @@ class ViewController: UIViewController
     var game: Concentration?
     var currentTheme: Theme?
     var themes = [Theme]()
-    var currentThemeIndex = 0 {
-        didSet {
-            currentTheme = themes[currentThemeIndex]
-        }
-    }
+    var currentThemeIndex = -1
     var emoji = [Int:String]()
     var flipCount = 0 {
         didSet {
@@ -43,7 +39,11 @@ class ViewController: UIViewController
     }
     
     override func viewDidLoad() {
-        themes.append(Theme(color: .red, emojiSet: ["a","b","c","d","e","f"], name: "letters"))
+        //load themes here
+        // TODO: load from json file?
+        themes.append(Theme(color: .red, emojiSet: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"], name: "letters"))
+        themes.append(Theme(color: .green, emojiSet: ["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🐨","🐯","🦁","🐮","🐷","🐽","🐸","🐵","🐔","🐥"], name: "animals"))
+        themes.append(Theme(color: .blue, emojiSet: ["⚽️","🏀","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","🏸","🥅","🏒","🏑","🏏","⛳️","🏹","🎣","🥊","🥋","🎽"], name: "sports"))
         startGame()
     }
     
@@ -70,7 +70,10 @@ class ViewController: UIViewController
         return emoji[card.identifier] ?? "?"
     }
     
-    func startGame(){
+    func startGame() {
+        if currentThemeIndex < themes.count - 1 {
+            currentThemeIndex += 1
+        }
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1)/2 )
         currentTheme = themes[currentThemeIndex]
         emojiChoices = currentTheme?.emojiSet
