@@ -24,8 +24,9 @@ class ViewController: UIViewController
     @IBOutlet var cardButtons: [UIButton]!
     
     @IBAction func startOver(_ sender: UIButton) {
-        game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1)/2 )
         flipCount = 0
+        emojiChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"]
+        game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1)/2 )
         updateView()
     }
     
@@ -51,7 +52,7 @@ class ViewController: UIViewController
         }
     }
     
-    var emojiChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]
+    var emojiChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"]
     
     var emoji = [Int:String]()
     
